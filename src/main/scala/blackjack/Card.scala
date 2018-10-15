@@ -27,6 +27,8 @@ case object King extends Rank
 
 case class Card(rank: Rank, suit: Suit) {
 
+  override def toString: String = s"$rank of $suit"
+
   def getValue(): Int = value
 
   val value: Int = rank match {
@@ -39,7 +41,10 @@ case class Card(rank: Rank, suit: Suit) {
     case Seven => 7
     case Eight => 8
     case Nine => 9
-    case Ten || Jack || Queen || King => 10
+    case Ten => 10
+    case Jack => 10
+    case Queen => 10
+    case King => 10
   }
 
 }

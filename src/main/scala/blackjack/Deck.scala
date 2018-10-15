@@ -6,7 +6,7 @@ case class Deck(cards: List[Card]) {
 
   def reshuffle(): Deck = Deck(Random.shuffle(Deck.allCards))
 
-  def draw: Card = cards.head
+  def pick: Card = cards.head
 
   def remove(card: Card): Deck = Deck(cards.tail)
 
