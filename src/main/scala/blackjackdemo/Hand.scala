@@ -8,6 +8,8 @@ case class Hand(cards: List[Card]) {
 
   def sumValue(): Int = cards.foldLeft(0)((totalValue: Int, card: Card) => totalValue + card.getValue())
 
+  override def toString: String = s"Your hand is $sumValue()" + "\n" + cards.mkString("\n")
+
 }
 
 object Hand {
